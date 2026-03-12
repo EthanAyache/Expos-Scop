@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La SCOP : Une Économie Humaine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage-50: #f4f7f5;
+            --sage-100: #e3ebe6;
+            --sage-600: #5c7f67;
+            --slate-900: #1e293b;
+            --cream: #fdfbf7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sage-50);
+            color: var(--slate-900);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .slide-deck {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: scale(0.98);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .content-card {
+            background: var(--cream);
+            width: 100%;
+            max-width: 1000px;
+            min-height: 600px;
+            border-radius: 2.5rem;
+            padding: 4rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+
+        .active .bullet-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dot-icon {
+            width: 8px;
+            height: 8px;
+            background-color: var(--sage-600);
+            border-radius: 50%;
+            margin-top: 0.75rem;
+            margin-right: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .nav-controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 3rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 50;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 1px solid #e5e7eb;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--slate-900);
+        }
+
+        .nav-btn:hover {
+            background: var(--sage-100);
+            transform: translateY(-2px);
+        }
+
+        .progress-indicator {
+            position: fixed;
+            bottom: 2rem;
+            left: 3rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--sage-600);
+            letter-spacing: 0.1em;
+        }
+
+        .accent-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--sage-600);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-deck" id="deck">
+        
+        <!-- SLIDE 1: INTRODUCTION -->
+        <section class="slide active" id="slide-0">
+            <div class="text-center max-w-4xl px-8">
+                <span class="text-sage-600 font-semibold tracking-widest uppercase text-sm mb-4 block">Économie Sociale et Solidaire</span>
+                <h1 class="text-6xl md:text-7xl font-bold mb-8 text-slate-900 leading-tight">La SCOP</h1>
+                <div class="w-24 h-1 bg-sage-600 mx-auto mb-8 rounded-full"></div>
+                <p class="text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+                    Concilier la performance économique et l'équité sociale dans une structure coopérative.
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: DEFINITION -->
+        <section class="slide" id="slide-1">
+            <div class="content-card">
+                <div class="accent-bar"></div>
+                <h2 class="text-4xl font-bold mb-10 text-slate-900">Fondements et Identité</h2>
+                <div class="space-y-4">
+                    <div class="bullet-item" style="transition-delay: 0.1s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Structure juridique :</strong> Une SCOP est une entreprise commerciale (SA, SARL ou SAS) qui adopte des statuts coopératifs.</p>
+                    </div>
+                    <div class="bullet-item" style="transition-delay: 0.2s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Utilité sociale :</strong> Sa finalité première est le service aux membres ou l'intérêt collectif, plutôt que la maximisation du profit individuel.</p>
+                    </div>
+                    <div class="bullet-item" style="transition-delay: 0.3s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Principes de l'ESS :</strong> Protection du patrimoine, gestion désintéressée et ancrage territorial.</p>
+                    </div>
+                    <div class="bullet-item" style="transition-delay: 0.4s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Valeurs clés :</strong> Solidarité entre les membres et responsabilité partagée.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: GOUVERNANCE -->
+        <section class="slide" id="slide-2">
+            <div class="content-card">
+                <div class="accent-bar"></div>
+                <h2 class="text-4xl font-bold mb-10 text-slate-900">Le Pouvoir & l'Argent</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-sage-600">Gouvernance Démocratique</h3>
+                        <div class="bullet-item" style="transition-delay: 0.1s">
+                            <div class="dot-icon"></div>
+                            <p class="text-base text-slate-600">Les salariés sont les <strong>associés majoritaires</strong> (au moins 51% du capital social).</p>
+                        </div>
+                        <div class="bullet-item" style="transition-delay: 0.2s">
+                            <div class="dot-icon"></div>
+                            <p class="text-base text-slate-600">Principe souverain : <strong>1 personne = 1 voix</strong> en Assemblée Générale, indépendamment du capital.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-sage-600">Répartition des Bénéfices</h3>
+                        <div class="bullet-item" style="transition-delay: 0.3s">
+                            <div class="dot-icon"></div>
+                            <p class="text-base text-slate-600"><strong>Part Entreprise (Réserves) :</strong> Pour consolider les fonds propres et assurer l'avenir.</p>
+                        </div>
+                        <div class="bullet-item" style="transition-delay: 0.4s">
+                            <div class="dot-icon"></div>
+                            <p class="text-base text-slate-600"><strong>Part Travail :</strong> Redistribuée équitablement entre tous les salariés de l'entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: DIVERSITE -->
+        <section class="slide" id="slide-3">
+            <div class="content-card">
+                <div class="accent-bar"></div>
+                <h2 class="text-4xl font-bold mb-10 text-slate-900">Un Modèle de Résilience</h2>
+                <div class="space-y-4">
+                    <div class="bullet-item" style="transition-delay: 0.1s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Diversité des secteurs :</strong> Industrie lourde, BTP, services informatiques, distribution bio ou médias (ex: Le Monde Diplomatique).</p>
+                    </div>
+                    <div class="bullet-item" style="transition-delay: 0.2s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Création vs Transformation :</strong> De nombreux projets naissent en coopérative, tandis que d'autres sont sauvés par leurs salariés lors de difficultés de l'entreprise classique.</p>
+                    </div>
+                    <div class="bullet-item" style="transition-delay: 0.3s">
+                        <div class="dot-icon"></div>
+                        <p class="text-lg text-slate-600"><strong>Stabilité de l'emploi :</strong> En période de crise, les SCOP privilégient souvent le maintien des emplois plutôt que le versement de dividendes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: CONCLUSION -->
+        <section class="slide" id="slide-4">
+            <div class="content-card text-center items-center">
+                <div class="accent-bar"></div>
+                <h2 class="text-5xl font-bold mb-8 text-slate-900">En Résumé</h2>
+                <p class="text-2xl text-slate-500 font-light max-w-2xl mb-12">
+                    "Placer l'humain au cœur du projet économique pour construire une entreprise durable et démocratique."
+                </p>
+                <div class="flex gap-8">
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-sage-600">92%</p>
+                        <p class="text-sm text-slate-400 uppercase tracking-tighter">Taux de pérennité à 3 ans</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-sage-600">+2500</p>
+                        <p class="text-sm text-slate-400 uppercase tracking-tighter">SCOP en France</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="progress-indicator" id="progress">01 / 05</div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()" title="Précédent">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button class="nav-btn" onclick="nextSlide()" title="Suivant">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            progress.innerText = `0${currentSlide + 1} / 0${slides.length}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            } else {
+                currentSlide = 0;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            } else {
+                currentSlide = slides.length - 1;
+                updateSlide();
+            }
+        }
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Click on slide to advance
+        document.getElementById('deck').addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-controls')) nextSlide();
+        });
+    </script>
+</body>
+</html>
